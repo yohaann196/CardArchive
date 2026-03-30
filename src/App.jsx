@@ -9,15 +9,28 @@ import AllocationChart from './components/AllocationChart'
 import HoldingsChart   from './components/HoldingsChart'
 import CollectionTable from './components/CollectionTable'
 import ItemModal       from './components/ItemModal'
+import TutorialModal   from './components/TutorialModal'
 
 import styles from './App.module.css'
+
+const TUTORIAL_KEY = 'cardarchive-tutorial-seen'
 
 let nextId = SAMPLE_ITEMS.length + 1
 
 export default function App() {
   const [items, setItems] = useStorage('cardarchive-items', SAMPLE_ITEMS)
   const [modal, setModal] = useState(null) // { mode: 'add' | 'edit', item? }
+  const [showTutorial, setShowTutorial] = useState(
+    () => !localStorage.getItem(TUTORIAL_KEY)
+  )
   const importRef = useRef(null)
+
+  function closeTutorial() {
+    localStorage.setItem(TUTORIAL_KEY, '1')
+    setShowTutorial(false)
+  }
+
+  function openTutorial() { setShowTutorial(true) }
 
   function openAdd() { setModal({ mode: 'add' }) }
   function openEdit(item) { setModal({ mode: 'edit', item }) }
@@ -76,6 +89,7 @@ export default function App() {
         onAdd={openAdd}
         onExport={handleExport}
         onImport={() => importRef.current?.click()}
+        onHelp={openTutorial}
       />
 
       <main className={styles.main}>
@@ -99,6 +113,8 @@ export default function App() {
           onSave={handleSave}
         />
       )}
+
+      {showTutorial && <TutorialModal onClose={closeTutorial} />}
     </div>
   )
 }
