@@ -1,7 +1,7 @@
 import { fmt } from '../constants'
 import styles from './Header.module.css'
 
-export default function Header({ items, onAdd, onImport, onExport }) {
+export default function Header({ items, onAdd, onImport, onExport, onHelp }) {
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
@@ -14,6 +14,9 @@ export default function Header({ items, onAdd, onImport, onExport }) {
         </div>
 
         <div className={styles.actions}>
+          <button className={styles.btnHelp} onClick={onHelp} title="Open tutorial">
+            ?
+          </button>
           <button className={styles.btnGhost} onClick={onImport}>
             <UpIcon /> Import
           </button>
