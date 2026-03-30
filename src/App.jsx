@@ -15,7 +15,7 @@ import styles from './App.module.css'
 
 const TUTORIAL_KEY = 'cardarchive-tutorial-seen'
 
-let nextId = SAMPLE_ITEMS.length + 1
+let nextId = 1
 
 export default function App() {
   const [items, setItems] = useStorage('cardarchive-items', SAMPLE_ITEMS)

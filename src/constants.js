@@ -26,17 +26,7 @@ export const GRADE_META = (g = '') => {
   return { label: g || 'Raw', cls: 'raw', color: '#7a6848' }
 }
 
-export const SAMPLE_ITEMS = [
-  { id: 1, name: 'Charizard Base Set Holo',  set: 'Base Set 1st Edition',  type: 'TCG',    grade: 'PSA 9',   value: 3200,    year: 1999, notes: 'One of my earliest grails. Perfect centering.' },
-  { id: 2, name: 'Black Lotus',              set: 'Alpha Edition',          type: 'TCG',    grade: 'BGS 9.5', value: 42000,   year: 1993, notes: 'The holy grail of Magic. Reserved for display only.' },
-  { id: 3, name: 'Michael Jordan Rookie',    set: 'Fleer 1986-87',          type: 'Sports', grade: 'PSA 10',  value: 22000,   year: 1986, notes: 'Flawless corners, no print lines. Bought from an estate sale.' },
-  { id: 4, name: 'Honus Wagner T206',        set: 'T206 White Border',      type: 'Sports', grade: 'Raw NM',  value: 350000,  year: 1909, notes: 'The rarest card in existence. Trimmed history unknown.' },
-  { id: 5, name: '1909-S VDB Lincoln Cent',  set: 'US Mint Philadelphia',   type: 'Coins',  grade: 'PSA 10',  value: 9500,    year: 1909, notes: 'Key date cent. Original luster, sharp strike on wheat stalks.' },
-  { id: 6, name: 'Amazing Fantasy #15',      set: 'Marvel Comics',          type: 'Comics', grade: 'CGC 9.8', value: 1200000, year: 1962, notes: 'First Spider-Man. Only 1 copy in 9.8.' },
-  { id: 7, name: 'Umbreon Gold Star',        set: 'POP Series 5',           type: 'TCG',    grade: 'PSA 9',   value: 8000,    year: 2006, notes: 'My favorite Pokémon illustration. Near impossible pull.' },
-  { id: 8, name: 'Mickey Mantle 1952 Topps', set: 'Topps Baseball Series',  type: 'Sports', grade: 'PSA 8',   value: 85000,   year: 1952, notes: 'The definitive postwar American baseball card.' },
-  { id: 9, name: 'Pikachu Illustrator',      set: 'CoroCoro Comic Promo',   type: 'TCG',    grade: 'PSA 8',   value: 180000,  year: 1998, notes: 'Given only to winners of the 1997-98 Illustration Contest.' },
-]
+export const SAMPLE_ITEMS = []
 
 export const fmt = (n) => {
   if (!n && n !== 0) return '—'
