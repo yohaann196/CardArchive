@@ -1,0 +1,117 @@
+.card {
+  background: #fff;
+  border: var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  animation: fadeUp 0.4s ease 0.15s both;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.card:hover {
+  transform: translate(-2px, -3px);
+  box-shadow: 6px 7px 0 #1A1A1A;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-family: 'Bangers', Impact, sans-serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: var(--ink);
+}
+
+.sub {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink4);
+}
+
+.body {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.svg {
+  width: 180px;
+  min-width: 140px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.slice path {
+  transition: transform 0.15s;
+  transform-origin: center;
+}
+
+.slice:hover path {
+  transform: scale(1.05);
+}
+
+.legend {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.legendRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #1A1A1A;
+  flex-shrink: 0;
+}
+
+.legendEmoji {
+  font-size: 13px;
+  line-height: 1;
+}
+
+.legendLabel {
+  font-weight: 700;
+  color: var(--ink2);
+  flex: 1;
+  white-space: nowrap;
+}
+
+.legendPct {
+  font-weight: 800;
+  color: var(--ink);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+}
+
+.legendVal {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--ink4);
+  white-space: nowrap;
+}
+
+.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink4);
+}

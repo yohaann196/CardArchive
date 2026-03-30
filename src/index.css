@@ -5,59 +5,74 @@
 }
 
 :root {
-  --bg:   #0d0b08;
-  --bg2:  #141108;
-  --bg3:  #1c1810;
-  --bg4:  #242018;
-  --bg5:  #2c2820;
+  --bg:      #FFF8F0;
+  --bg2:     #FFEEDD;
+  --card:    #FFFFFF;
 
-  --gold:     #c9a84c;
-  --gold2:    #e8d080;
-  --gold3:    #a07830;
-  --gold-dim: #5a4818;
-  --gold-glow: rgba(201,168,76,0.12);
+  --purple:  #6C63FF;
+  --purple2: #9C96FF;
+  --green:   #10B981;
+  --green2:  #6EE7B7;
+  --red:     #EF4444;
+  --red2:    #FCA5A5;
+  --yellow:  #F59E0B;
+  --yellow2: #FDE68A;
+  --blue:    #3B82F6;
+  --blue2:   #93C5FD;
+  --pink:    #EC4899;
+  --pink2:   #F9A8D4;
+  --orange:  #F97316;
+  --orange2: #FED7AA;
+  --teal:    #14B8A6;
 
-  --text:  #ede8dc;
-  --text2: #b8a888;
-  --text3: #7a6848;
-  --text4: #4a3c28;
+  --ink:     #1A1A1A;
+  --ink2:    #3D3D3D;
+  --ink3:    #6B6B6B;
+  --ink4:    #9B9B9B;
 
-  --border:  rgba(201,168,76,0.12);
-  --border2: rgba(201,168,76,0.22);
-  --border3: rgba(201,168,76,0.35);
+  --border:  2.5px solid #1A1A1A;
+  --shadow:  4px 4px 0px #1A1A1A;
+  --shadow-sm: 2px 2px 0px #1A1A1A;
 
-  --sleeve:  #100e08;
-  --sleeve2: #181408;
+  --r-sm: 6px;
+  --r-md: 12px;
+  --r-lg: 18px;
+  --r-xl: 24px;
 
-  --r-sm: 4px;
-  --r-md: 8px;
-  --r-lg: 12px;
-  --r-xl: 16px;
-
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: 'Nunito', 'Rounded', system-ui, sans-serif;
   font-size: 16px;
-  color-scheme: dark;
 }
 
 html, body {
   height: 100%;
   background: var(--bg);
-  color: var(--text);
+  color: var(--ink);
 }
 
 #root { min-height: 100vh; }
 
-::selection { background: rgba(201,168,76,0.25); }
+::selection { background: rgba(108,99,255,0.25); }
 
-/* subtle scrollbar */
-::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: var(--bg2); }
-::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 4px; border: 2px solid var(--bg2); }
 
 button { cursor: pointer; font-family: inherit; }
 input, select, textarea { font-family: 'DM Mono', monospace; }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
+@keyframes pop {
+  0%   { transform: scale(0.92); }
+  60%  { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-1.5deg); }
+  50%       { transform: rotate(1.5deg); }
+}
+

@@ -1,10 +1,10 @@
-// category display config — emoji, accent color, glow for hover states
+// category display config — emoji, accent color, chart color for cartoony style
 export const TYPE_META = {
-  TCG:    { label: 'TCG',    emoji: '🃏', color: '#4080c0', glow: 'rgba(64,128,192,0.2)'  },
-  Sports: { label: 'Sports', emoji: '⚾', color: '#c04040', glow: 'rgba(192,64,64,0.2)'   },
-  Coins:  { label: 'Coins',  emoji: '🪙', color: '#c08040', glow: 'rgba(192,128,64,0.2)'  },
-  Comics: { label: 'Comics', emoji: '📚', color: '#8060c0', glow: 'rgba(128,96,192,0.2)'  },
-  Other:  { label: 'Other',  emoji: '📦', color: '#40a060', glow: 'rgba(64,160,96,0.2)'   },
+  TCG:    { label: 'TCG',    emoji: '🃏', color: '#6C63FF', light: '#EDE9FF', chart: '#6C63FF' },
+  Sports: { label: 'Sports', emoji: '⚾', color: '#EF4444', light: '#FFE5E5', chart: '#EF4444' },
+  Coins:  { label: 'Coins',  emoji: '🪙', color: '#F59E0B', light: '#FEF3C7', chart: '#F59E0B' },
+  Comics: { label: 'Comics', emoji: '📚', color: '#EC4899', light: '#FCE7F3', chart: '#EC4899' },
+  Other:  { label: 'Other',  emoji: '📦', color: '#10B981', light: '#D1FAE5', chart: '#10B981' },
 }
 
 export const GRADES = [

@@ -37,7 +37,7 @@ export default function ItemModal({ item, onClose, onSave }) {
     >
       <div className={styles.modal}>
         <div className={styles.header}>
-          <h2 className={styles.title}>{isEdit ? 'Edit Item' : 'Add to Vault'}</h2>
+          <h2 className={styles.title}>{isEdit ? '✏️ Edit Holding' : '➕ Add Holding'}</h2>
           <button className={styles.closeBtn} onClick={onClose}><CloseIcon /></button>
         </div>
 
@@ -62,7 +62,7 @@ export default function ItemModal({ item, onClose, onSave }) {
                   <button
                     key={cat}
                     className={`${styles.typeBtn} ${active ? styles.typeBtnActive : ''}`}
-                    style={active ? { '--tc': meta.color, '--tg': meta.glow } : undefined}
+                    style={active ? { '--tc': meta.color } : undefined}
                     onClick={() => patch('type', cat)}
                   >
                     <span className={styles.typeEmoji}>{meta.emoji}</span>
@@ -125,7 +125,7 @@ export default function ItemModal({ item, onClose, onSave }) {
         <div className={styles.footer}>
           <button className={styles.btnCancel} onClick={onClose}>Cancel</button>
           <button className={styles.btnSave} onClick={handleSave}>
-            {isEdit ? 'Save Changes' : 'Add to Vault'}
+            {isEdit ? '💾 Save Changes' : '🚀 Add to Portfolio'}
           </button>
         </div>
       </div>
