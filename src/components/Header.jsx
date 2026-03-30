@@ -8,7 +8,7 @@ export default function Header({ items, onAdd, onImport, onExport }) {
         <div className={styles.brand}>
           <span className={styles.logo}>📈</span>
           <div>
-            <div className={styles.logoText}>CardVault</div>
+            <div className={styles.logoText}>CardArchive</div>
             <div className={styles.logoSub}>Investor Dashboard</div>
           </div>
         </div>

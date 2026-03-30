@@ -38,7 +38,7 @@ export default function App() {
   function handleExport() {
     const blob = new Blob([JSON.stringify(items, null, 2)], { type: 'application/json' })
     const url  = URL.createObjectURL(blob)
-    const a    = Object.assign(document.createElement('a'), { href: url, download: 'cardvault-portfolio.json' })
+    const a    = Object.assign(document.createElement('a'), { href: url, download: 'cardarchive-portfolio.json' })
     a.click()
     URL.revokeObjectURL(url)
   }
@@ -54,7 +54,7 @@ export default function App() {
         setItems(parsed)
         nextId = Math.max(...parsed.map(i => i.id ?? 0)) + 1
       } catch {
-        alert('Could not parse that file — make sure it\'s a CardVault export.')
+        alert('Could not parse that file — make sure it\'s a CardArchive export.')
       }
     }
     reader.readAsText(file)
