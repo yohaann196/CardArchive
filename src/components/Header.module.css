@@ -1,25 +1,21 @@
 .header {
-  position: relative;
-  background: var(--bg2);
-  border-bottom: 1px solid var(--border2);
-  overflow: hidden;
-}
-
-.grain {
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none;
-  opacity: 0.6;
+  background: var(--purple);
+  border-bottom: var(--border);
+  box-shadow: 0 4px 0 #1A1A1A;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .inner {
-  position: relative;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 28px;
-  gap: 24px;
+  gap: 20px;
 }
 
 .brand {
@@ -28,59 +24,28 @@
   gap: 12px;
 }
 
-.logoMark { flex-shrink: 0; }
+.logo {
+  font-size: 30px;
+  line-height: 1;
+  filter: drop-shadow(2px 2px 0 rgba(0,0,0,0.3));
+}
 
 .logoText {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
-  font-weight: 600;
-  color: var(--gold);
-  letter-spacing: 0.06em;
+  font-family: 'Bangers', Impact, sans-serif;
+  font-size: 26px;
+  letter-spacing: 2px;
+  color: #fff;
   line-height: 1;
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.25);
 }
 
 .logoSub {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--text3);
-  margin-top: 3px;
-}
-
-.stats {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.stat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-}
-
-.statVal {
-  font-family: 'DM Mono', monospace;
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--gold);
-  letter-spacing: 0.02em;
-}
-
-.statLabel {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
+  font-size: 10px;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--text3);
-}
-
-.divider {
-  width: 1px;
-  height: 32px;
-  background: var(--border);
+  color: rgba(255,255,255,0.7);
+  margin-top: 2px;
 }
 
 .actions {
@@ -93,40 +58,45 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  padding: 7px 12px;
-  border-radius: var(--r-sm);
-  border: 1px solid var(--border2);
-  background: none;
-  color: var(--text3);
-  transition: all 0.2s;
+  padding: 8px 14px;
+  border-radius: var(--r-md);
+  border: 2px solid rgba(255,255,255,0.6);
+  background: transparent;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  transition: all 0.15s;
+  white-space: nowrap;
 }
 
 .btnGhost:hover {
-  border-color: var(--border3);
-  color: var(--gold);
-  background: var(--gold-glow);
+  background: rgba(255,255,255,0.18);
+  border-color: #fff;
+  transform: translateY(-1px);
 }
 
 .btnAdd {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  padding: 8px 16px;
-  border-radius: var(--r-sm);
-  border: 1px solid var(--gold3);
-  background: rgba(201,168,76,0.1);
-  color: var(--gold2);
-  transition: all 0.2s;
+  padding: 9px 16px;
+  border-radius: var(--r-md);
+  border: 2.5px solid #1A1A1A;
+  background: #fff;
+  color: var(--purple);
+  font-size: 13px;
+  font-weight: 800;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.15s;
+  white-space: nowrap;
 }
 
 .btnAdd:hover {
-  background: rgba(201,168,76,0.18);
-  border-color: var(--gold);
-  color: var(--gold2);
+  transform: translate(-1px, -2px);
+  box-shadow: 3px 4px 0 #1A1A1A;
+}
+
+.btnAdd:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
 }
