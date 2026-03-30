@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import styles from './TutorialModal.module.css'
 
 const STEPS = [
@@ -46,6 +46,19 @@ export default function TutorialModal({ onClose }) {
   const [step, setStep] = useState(0)
   const current = STEPS[step]
   const isLast  = step === STEPS.length - 1
+  const nextBtnRef = useRef(null)
+
+  useEffect(() => {
+    nextBtnRef.current?.focus()
+  }, [])
+
+  useEffect(() => {
+    function handleKeyDown(e) {
+      if (e.key === 'Escape') onClose()
+    }
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [onClose])
 
   function handleNext() {
     if (isLast) { onClose(); return }
@@ -61,17 +74,31 @@ export default function TutorialModal({ onClose }) {
       className={styles.overlay}
       onClick={e => e.target === e.currentTarget && onClose()}
     >
-      <div className={styles.modal}>
+      <div
+        className={styles.modal}
+        role="dialog"
+        aria-modal="true"
+        aria-label={current.title}
+      >
         {/* Progress dots */}
-        <div className={styles.dots}>
-          {STEPS.map((_, i) => (
-            <button
-              key={i}
-              className={`${styles.dot} ${i === step ? styles.dotActive : ''}`}
-              onClick={() => setStep(i)}
-              aria-label={`Go to step ${i + 1}`}
-            />
-          ))}
+        <div className={styles.dotsRow}>
+          <div className={styles.dots}>
+            {STEPS.map((_, i) => (
+              <button
+                key={i}
+                className={`${styles.dot} ${i === step ? styles.dotActive : ''}`}
+                onClick={() => setStep(i)}
+                aria-label={`Go to step ${i + 1}`}
+              />
+            ))}
+          </div>
+          <button
+            className={styles.closeBtn}
+            onClick={onClose}
+            aria-label="Close tutorial"
+          >
+            <CloseIcon />
+          </button>
         </div>
 
         {/* Step content */}
@@ -117,12 +144,21 @@ export default function TutorialModal({ onClose }) {
                 ← Back
               </button>
             )}
-            <button className={styles.btnNext} onClick={handleNext}>
+            <button className={styles.btnNext} onClick={handleNext} ref={nextBtnRef}>
               {isLast ? '🚀 Let\'s go!' : 'Next →'}
             </button>
           </div>
         </div>
       </div>
     </div>
+  )
+}
+
+function CloseIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <line x1="2" y1="2" x2="12" y2="12"/>
+      <line x1="12" y1="2" x2="2" y2="12"/>
+    </svg>
   )
 }

@@ -25,11 +25,35 @@
 }
 
 /* ── Progress dots ───────────────────────────────────────────── */
+.dotsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 16px 0 24px;
+}
+
 .dots {
   display: flex;
-  justify-content: center;
   gap: 8px;
-  padding: 20px 24px 0;
+}
+
+.closeBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--r-sm);
+  border: 2px solid #1A1A1A;
+  background: var(--bg2);
+  color: var(--ink2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.12s;
+  flex-shrink: 0;
+}
+
+.closeBtn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 2px 2px 0 #1A1A1A;
 }
 
 .dot {
