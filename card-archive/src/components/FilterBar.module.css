@@ -1,0 +1,62 @@
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 28px;
+  background: var(--bg3);
+  border-bottom: 1px solid var(--border);
+}
+
+.label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text4);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.chips {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  padding: 5px 11px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--text3);
+  transition: all 0.18s;
+}
+
+.chip:hover:not(.active) {
+  border-color: var(--border2);
+  color: var(--text2);
+  background: rgba(255,255,255,0.03);
+}
+
+.active {
+  border-color: var(--chip-color, var(--gold3));
+  background: var(--chip-glow, var(--gold-glow));
+  color: var(--chip-color, var(--gold));
+}
+
+.emoji { font-size: 11px; }
+
+.count {
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 0 5px;
+  font-size: 9px;
+  min-width: 16px;
+  text-align: center;
+}

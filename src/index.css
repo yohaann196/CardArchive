@@ -1,0 +1,63 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:   #0d0b08;
+  --bg2:  #141108;
+  --bg3:  #1c1810;
+  --bg4:  #242018;
+  --bg5:  #2c2820;
+
+  --gold:     #c9a84c;
+  --gold2:    #e8d080;
+  --gold3:    #a07830;
+  --gold-dim: #5a4818;
+  --gold-glow: rgba(201,168,76,0.12);
+
+  --text:  #ede8dc;
+  --text2: #b8a888;
+  --text3: #7a6848;
+  --text4: #4a3c28;
+
+  --border:  rgba(201,168,76,0.12);
+  --border2: rgba(201,168,76,0.22);
+  --border3: rgba(201,168,76,0.35);
+
+  --sleeve:  #100e08;
+  --sleeve2: #181408;
+
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-xl: 16px;
+
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 16px;
+  color-scheme: dark;
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+}
+
+#root { min-height: 100vh; }
+
+::selection { background: rgba(201,168,76,0.25); }
+
+/* subtle scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 3px; }
+
+button { cursor: pointer; font-family: inherit; }
+input, select, textarea { font-family: 'DM Mono', monospace; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

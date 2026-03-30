@@ -1,0 +1,59 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+}
+
+.main {
+  flex: 1;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  gap: 12px;
+  animation: fadeIn 0.3s ease;
+}
+
+.emptyTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text2);
+}
+
+.emptySub {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--text4);
+  text-align: center;
+}
+
+.emptyBtn {
+  margin-top: 8px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  padding: 10px 20px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--gold3);
+  background: rgba(201,168,76,0.08);
+  color: var(--gold2);
+  cursor: pointer;
+  transition: all 0.18s;
+}
+
+.emptyBtn:hover {
+  background: rgba(201,168,76,0.16);
+  border-color: var(--gold);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
